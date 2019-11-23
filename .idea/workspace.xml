@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5404674-2ae8-4480-821c-c5f59ec60afe" name="Default Changelist" comment="" />
+    <list default="true" id="b5404674-2ae8-4480-821c-c5f59ec60afe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Path.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PathNotInitializedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/estimateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/explorateur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sortie_entre_estimateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tpgo/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/Graph.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tpgo/graphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/graphTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/graphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,16 +23,22 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1U0tKD1YOGMMy7iQa6cEexgd4Sw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -39,7 +57,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Android JUnit.graphTest.test1">
+  <component name="RunManager" selected="JUnit.graphTest.test_estimation">
     <configuration name="graphTest.test1" type="AndroidJUnit" temporary="true" nameIsGenerated="true">
       <module name="tpgo" />
       <option name="PACKAGE_NAME" value="" />
@@ -55,6 +73,26 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="graphTest" />
       <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="graphTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tpgo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="graphTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="graphTest.test_estimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tpgo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="graphTest" />
+      <option name="METHOD_NAME" value="test_estimation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,9 +114,13 @@
       <item itemvalue="JUnit.tpgo" />
       <item itemvalue="Android JUnit.graphTest.test1" />
       <item itemvalue="JUnit.graphTest.test1" />
+      <item itemvalue="JUnit.graphTest.test2" />
+      <item itemvalue="JUnit.graphTest.test_estimation" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.graphTest.test_estimation" />
+        <item itemvalue="JUnit.graphTest.test2" />
         <item itemvalue="Android JUnit.graphTest.test1" />
         <item itemvalue="JUnit.graphTest.test1" />
       </list>
@@ -94,11 +136,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574505274157</updated>
-      <workItem from="1574505277426" duration="2506000" />
+      <workItem from="1574505277426" duration="13681000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

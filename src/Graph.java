@@ -66,16 +66,30 @@ public class Graph {
             return -1 ;
         }
     }
+
+    public int getNb_sommets() {
+        return nb_sommets;
+    }
+
     public void afficher(){
         int nb = this.nb_sommets ;
         int i = 1 ;
         int j=1 ;
 
+        System.out.format("%3d -",0);
+       for(i=1;i<=nb;i++){
+           System.out.format("I %3d  ", i);
+       }
+       i=1 ;
+       System.out.println();
+
         while(i<=nb){
             j=1;
+            System.out.format("%3d -",i);
             while(j<=nb){
 
-                System.out.print( graph.get(i+"|"+j) +" | " ) ;
+               // System.out.print( graph.get(i+"|"+j) +" | " ) ;
+                System.out.format("| %3d |", graph.get(i+"|"+j));
 
                 j++;
             }

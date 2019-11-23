@@ -1,13 +1,29 @@
 import org.junit.*;
 
 import java.util.LinkedList;
+import java.util.TreeSet;
 
 
 public class graphTest {
+
+    private Graph g ;
+    private estimateur s ;
+
+
+
+    @Before
+    public void init(){
+         g = new Graph(3);
+         s = new sortie_entre_estimateur() ;
+    }
+
+
+
+
     @Test
     public void test1(){
 
-        Graph g = new Graph(6);
+
         Assert.assertEquals(g.get_arret(6,6),0,0);
         Assert.assertEquals(g.get_arret(5,5),0,0);
         Assert.assertEquals(g.get_arret(1,1),0,0);
@@ -22,22 +38,72 @@ public class graphTest {
         ex.afficher();
     }
     @Test
-    public void test_estimation(){
-        Graph g = new Graph(6) ;
-        //g.afficher();
-        estimateur s = new sortie_entre_estimateur() ;
+    public void cout_test() throws Exception{
         Path pere  = new Path(s,g) ;
-        LinkedList<Integer> li = pere.availeble_val() ;
-        System.out.println(li);
-        try {
-            Path fils = new Path(pere, li.get(2));
-            fils.setEstimation();
-            System.out.println(fils.getCout());
-            System.out.println(fils.total());
+        Path fils = new Path(pere,2);
+        Assert.assertEquals(g.get_arret(1,2),fils.getCout(),0);
+        fils.setEstimation();
+        Assert.assertNotEquals(pere.total(),fils.total());
 
-        }catch (Exception e){
+    }
+    @Test
+    public void first_in(){
+        Path pere  = new Path(s,g) ;
+        Assert.assertEquals(pere.getPath().indexOf(1),0,0);
+        Assert.assertEquals(pere.getPath().indexOf(2),-1,0);
+    }
 
-        }
+    @Test(expected = NotHamiltonException.class)
+    public void test_boucle() throws Exception{
+        Path pere  = new Path(s,g) ;
+        Path fils = new Path(pere,1) ;
+    }
+    @Test(expected = PathNotInitializedException.class)
+    public void test_not_init() throws Exception{
+        Path pere = null ;
+        Path fils = new Path(pere,1) ;
+    }
 
+
+    @Test
+    public void ls_test(){
+
+        LinkedList<Integer> le = new LinkedList<Integer>() ;
+        le.add(2) ;
+        le.add(5) ;
+        le.add(2);
+        TreeSet<Integer> set2 = new TreeSet<Integer>(le);
+        TreeSet<Integer> set3 = new TreeSet<Integer>(le);
+        Assert.assertEquals(set2,set3);
+        Assert.assertTrue(set2.equals(set3));
+        set3.add(8);
+        Assert.assertNotEquals(set2,set3);
+        Assert.assertTrue(!set3.equals(set2));
+
+    }
+    @Test
+    public void ls() throws Exception{
+        PathCollection ls = new PathCollection() ;
+        Path pere  = new Path(s,g) ;
+        Path fils = new Path(pere,3) ;
+        fils.setEstimation();
+        ls.addValue(pere);
+        ls.addValue(fils);
+        System.out.println(ls.toString() ) ;
+    }
+    @Test
+    public void Test_solution() throws Exception{
+        Path pere  = new Path(s,g) ;
+        Path fils = new Path(pere,2) ;
+         fils = new Path(fils,3) ;
+         System.out.println(fils);
+         Assert.assertTrue(fils.solution());
+    }
+
+    @Test
+    public void test_exploring() throws Exception{
+        explorateur exp = new explorateur(12) ;
+        System.out.println(exp.explore());
+        exp.afficher();
     }
 }

@@ -13,8 +13,8 @@ public class graphTest {
 
     @Before
     public void init(){
-         g = new Graph(3);
-         s = new sortie_entre_estimateur() ;
+         g = new Graph(4);
+        // s = new sortie_entre_estimateur() ;
          s= new bestEstim() ;
     }
 
@@ -86,24 +86,40 @@ public class graphTest {
     public void ls() throws Exception{
         PathCollection ls = new PathCollection() ;
         Path pere  = new Path(s,g) ;
-        Path fils = new Path(pere,3) ;
+        Path fils = new Path(pere,3) ;;
         fils.setEstimation();
         ls.addValue(pere);
         ls.addValue(fils);
+        fils = new Path(pere,2);
+        ls.addValue(fils);
+        fils = new Path(pere,4);
+        ls.addValue(fils);
+        fils = new Path(pere,4);
+        ls.addValue(fils);
         System.out.println(ls.toString() ) ;
+        //System.out.println(ls.getlist().removeLast().availeble_val()) ;
     }
     @Test
     public void Test_solution() throws Exception{
         Path pere  = new Path(s,g) ;
         Path fils = new Path(pere,2) ;
          fils = new Path(fils,3) ;
+         g.afficher();
+        Assert.assertTrue(fils.solution());
+         Assert.assertEquals(fils.total()-fils.getCout(),g.get_arret(2,3));
          System.out.println(fils);
-         Assert.assertTrue(fils.solution());
+
+    }
+
+    @Test
+    public void test_list_delete(){
+
+
     }
 
     @Test
     public void test_exploring() throws Exception{
-        explorateur exp = new explorateur(12) ;
+        explorateur exp = new explorateur(10) ;
         System.out.println(exp.explore());
         exp.afficher();
     }

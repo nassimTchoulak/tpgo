@@ -9,6 +9,7 @@ public class bestEstim implements estimateur {
     }
 
     public int estimation(Graph G, Path path){
+
         this.nb_estimation ++ ;
 
         LinkedList<Integer> ls = path.availeble_val() ;
@@ -26,6 +27,7 @@ public class bestEstim implements estimateur {
 
         }
         return total/2 ;
+
     }
     public int estimation(Graph G){
         nb_estimation ++ ;

@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 
 public class Graph {
-    private static final int range = 461;
+    private static final int range = 100;
     private static final int min = 1;
 
     private int nb_sommets ;

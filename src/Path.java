@@ -7,10 +7,11 @@ public class Path implements Comparable<Path> {
 
     private LinkedList<Integer> path ;
     private int cout ;
-    private int estimation = -1 ;
+    private int estimation = 0 ;
 
     static private estimateur estimateur = null;
     static private Graph graph = null;
+    private boolean is_sol ;
 
 
 
@@ -22,6 +23,8 @@ public class Path implements Comparable<Path> {
         path.add(1);
         this.cout = 0 ;
         this.estimation = estim.estimation(g) ;
+
+        this.is_sol = false ;
 
 
     }
@@ -54,6 +57,9 @@ public class Path implements Comparable<Path> {
         return ls ;
     }
     public boolean solution(){
+        if(this.is_sol){
+            return true ;
+        }
         boolean all = true ;
         int i = 1 ;
         while((all)&&(i<=graph.getNb_sommets())){
@@ -66,6 +72,7 @@ public class Path implements Comparable<Path> {
         }
         if(all){
             this.cout = this.cout + graph.get_arret(path.getLast(),1) ;
+            this.is_sol = true ;
         }
         return all ;
     }
@@ -100,10 +107,14 @@ public class Path implements Comparable<Path> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Path pt = (Path) o;
-        if(this.getPath().getLast()!=pt.getPath().getLast()){
+        if(!this.getPath().getLast().equals(pt.getPath().getLast())){
             return false ;
         }
         else{
+            if(this.getPath().size()!=this.getPath().size()){
+                return false ;
+            }
+
             TreeSet<Integer> set = new TreeSet<Integer>(this.getPath());
             TreeSet<Integer> set2 = new TreeSet<Integer>(pt.getPath());
             return set.equals(set2);
@@ -113,7 +124,11 @@ public class Path implements Comparable<Path> {
     }
 
     public String toString(){
-        return this.path.toString() +" | cost: "+this.cout+" | estm: "+this.estimation+" ("+this.total()+")";
+        if(this.solution())
+        return this.path.toString() +" | cost: "+this.cout+" | ";
+        else{
+            return this.path.toString() +" | cost: "+this.cout+" | estim: "+this.estimation;
+        }
     }
 
 

@@ -119,7 +119,7 @@ public class graphTest {
 
     @Test
     public void test_exploring() throws Exception{
-        explorateur exp = new explorateur(10) ;
+        explorateur exp = new explorateur(15) ;
         System.out.println(exp.explore());
         exp.afficher();
     }

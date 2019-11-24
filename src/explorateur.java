@@ -34,7 +34,7 @@ public class explorateur {
 
             while((!this.all_cas.getlist().isEmpty())&&(!found)){
 
-                System.out.println(all_cas);
+               // System.out.println(all_cas);
                 Z= all_cas.getlist().removeFirst() ;
                 //System.out.println(Z);
 
@@ -58,7 +58,7 @@ public class explorateur {
 
                             Path tmp = all_cas.getlist().remove(index) ;
 
-                            System.out.println("confilct manegement on :"+fils +" with "+tmp);
+                           // System.out.println("confilct manegement on :"+fils +" with "+tmp);
 
                             if(tmp.compareTo(fils)>0){
                                 all_cas.addValue(fils);

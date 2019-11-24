@@ -4,14 +4,15 @@
     <list default="true" id="b5404674-2ae8-4480-821c-c5f59ec60afe" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph.txt" beforeDir="false" afterPath="$PROJECT_DIR$/graph.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tpgo/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/Path.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tpgo/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/Graph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tpgo/bestEstim.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/bestEstim.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tpgo/explorateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/explorateur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tpgo/graphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/graphTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tpgo/sortie_entre_estimateur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tpgo/t" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/bestEstim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bestEstim.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/explorateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/explorateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sortie_entre_estimateur.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +168,7 @@
       <workItem from="1574593440539" duration="6000" />
       <workItem from="1574597145407" duration="197000" />
       <workItem from="1574602831250" duration="3132000" />
-      <workItem from="1574619150307" duration="10055000" />
+      <workItem from="1574619150307" duration="17116000" />
     </task>
     <servers />
   </component>

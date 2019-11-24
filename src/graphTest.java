@@ -21,18 +21,7 @@ public class graphTest {
 
 
 
-    @Test
-    public void test1(){
 
-
-        Assert.assertEquals(g.get_arret(6,6),0,0);
-        Assert.assertEquals(g.get_arret(5,5),0,0);
-        Assert.assertEquals(g.get_arret(1,1),0,0);
-        Assert.assertNotEquals(g.get_arret(4,6),0);
-        System.out.println(g.get_min_go_to(4));
-        System.out.println(g.get_min_go_to(5));
-        g.afficher();
-    }
     @Test
     public void test2() throws Exception{
         explorateur ex = new explorateur(6);
@@ -119,7 +108,7 @@ public class graphTest {
 
     @Test
     public void test_exploring() throws Exception{
-        explorateur exp = new explorateur(4) ;
+        explorateur exp = new explorateur(5) ;
         System.out.println(exp.explore().toString()+s.getNb_estimation());
 
         exp.afficher();

@@ -8,43 +8,55 @@ public class bestEstim implements estimateur {
         this.nb_estimation = 0 ;
     }
 
+
     public int estimation(Graph G, Path path){
 
-        this.nb_estimation ++ ;
+        System.out.print(" evaluation de : "+path);
 
+
+        // available intermediary heads
+        LinkedList<Integer> ls = path.availeble_val() ;
+
+        TreeSet<Integer> exclude = new TreeSet<Integer>(path.getPath());
+
+        this.nb_estimation ++ ;
         if(path.solution()){
             return 0 ;
         }
-
-        LinkedList<Integer> ls = path.availeble_val() ;
-
-
-        Iterator<Integer> iterate = ls.iterator();
-
-        TreeSet<Integer> set = new TreeSet<Integer>(path.getPath());
-        set.remove(1) ;
-
-        int total =  G.get_min_go_to(1,set) + G.get_min_leave_from(path.getPath().getLast(),set);
-        int sommet ;
-
-        while(iterate.hasNext()) {
-            // System.out.print(iterate.next());
-            sommet = iterate.next() ;
-            total = G.get_min_go_to(sommet) + G.get_min_leave_from(sommet) ;
-
+        if(path.getPath().size()==G.getNb_sommets()){
+            return G.get_arret(path.getPath().getLast(),1) ;
         }
+        if(ls.size()==1){
+            int z = ls.getFirst() ;
+            return G.get_arret(path.getPath().getLast(),z)+G.get_arret(z,1)  ;
+        }
+
+
+        int total = G.get_min_go_to(1,exclude) + G.get_min_leave_from(path.getPath().getLast(),exclude) ;
+
+        int target ;
+
+        for(int i=0;i<ls.size();i++){
+            target = ls.get(i) ;
+            total = total + G.get_min_leave_from(target,exclude);
+        }
+        exclude.remove(path.getPath().getLast()) ;
+
+        for(int i=0;i<ls.size();i++){
+            target = ls.get(i) ;
+            total = total + G.get_min_go_to(target,exclude);
+        }
+
+
+        System.out.println("gives : "+total/2);
+
         //return total/2 ;
         return 0 ;
 
     }
     public int estimation(Graph G){
         nb_estimation ++ ;
-        int i =   G.getNb_sommets() ;
-        int total = 0 ;
-        for(int j=1;j<=i;j++){
-            total = total + G.get_min_go_to(j) + G.get_min_leave_from(j) ;
-        }
-        total = total / 2 ;
+
         return  0 ;
     }
     public int getNb_estimation(){

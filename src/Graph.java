@@ -38,36 +38,13 @@ public class Graph {
         }
     }
 
-    public int get_min_leave_from(int from){
-        int i = 1 ;
-        int min = range ;
-        while(i<=this.nb_sommets){
-            if((i!=from)&&(min>graph.get(from+"|"+i))){
-                min = graph.get(from+"|"+i) ;
-            }
-            i++;
-        }
-        return min ;
-    }
-    public int get_min_go_to(int to){
-        int i = 1 ;
-        int min = range ;
-        while(i<=this.nb_sommets){
-            if((i!=to)&&(min>graph.get(i+"|"+to))){
-                min = graph.get(i+"|"+to) ;
-            }
-            i++;
-        }
-        return min ;
-    }
-
 
     public int get_arret(int from , int to){
         if((from<=this.nb_sommets)&&(to<=this.nb_sommets)){
             return graph.get(from+"|"+to) ;
         }
         else {
-            return -1 ;
+            return 77777777 ;
         }
     }
     public int get_min_go_to(int to , TreeSet<Integer> exclude){
@@ -75,11 +52,14 @@ public class Graph {
         int i = 1 ;
         int min = range ;
         while(i<=this.nb_sommets){
+
+
             if((i!=to)&&(min>graph.get(i+"|"+to))&&(!exclude.contains(i))){
                 min = graph.get(i+"|"+to) ;
             }
             i++;
         }
+        System.out.println(" min to go to "+to+":"+min +" excluded values "+exclude);
         return min ;
 
     }
@@ -94,6 +74,7 @@ public class Graph {
             }
             i++;
         }
+        System.out.println(" min to leave from "+from+":"+min);
         return min ;
 
     }

@@ -1,5 +1,9 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.lang.Math;
+import java.util.TreeSet;
 
 
 public class Graph {
@@ -66,9 +70,53 @@ public class Graph {
             return -1 ;
         }
     }
+    public int get_min_go_to(int to , TreeSet<Integer> exclude){
+
+        int i = 1 ;
+        int min = range ;
+        while(i<=this.nb_sommets){
+            if((i!=to)&&(min>graph.get(i+"|"+to))&&(!exclude.contains(i))){
+                min = graph.get(i+"|"+to) ;
+            }
+            i++;
+        }
+        return min ;
+
+    }
+
+    public int get_min_leave_from(int from,TreeSet<Integer> exclude){
+
+        int i = 1 ;
+        int min = range ;
+        while(i<=this.nb_sommets){
+            if((i!=from)&&(min>graph.get(from+"|"+i))&&(!exclude.contains(i))){
+                min = graph.get(from+"|"+i) ;
+            }
+            i++;
+        }
+        return min ;
+
+    }
 
     public int getNb_sommets() {
         return nb_sommets;
+    }
+    public void into_file() throws FileNotFoundException, UnsupportedEncodingException {
+        int i;
+        int j ;
+
+        PrintWriter file = new PrintWriter("graph.txt" , "UTF-8");
+
+        file.println(this.nb_sommets);
+
+        for(i=1;i<=this.nb_sommets;i++){
+                for(j=1;j<=this.nb_sommets;j++){
+                    file.println(graph.get(i+"|"+j).toString());
+                }
+
+        }
+        file.close();
+
     }
 
     public void afficher(){

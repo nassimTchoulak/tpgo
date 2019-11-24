@@ -15,6 +15,7 @@ public class graphTest {
     public void init(){
          g = new Graph(3);
          s = new sortie_entre_estimateur() ;
+         s= new bestEstim() ;
     }
 
 
@@ -33,7 +34,7 @@ public class graphTest {
         g.afficher();
     }
     @Test
-    public void test2(){
+    public void test2() throws Exception{
         explorateur ex = new explorateur(6);
         ex.afficher();
     }
@@ -106,4 +107,5 @@ public class graphTest {
         System.out.println(exp.explore());
         exp.afficher();
     }
+
 }

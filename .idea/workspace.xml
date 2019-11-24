@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5404674-2ae8-4480-821c-c5f59ec60afe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/NotHamiltonException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PathCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bestEstim.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/tpgo/Path.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/Path.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tpgo/Graph.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/Graph.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tpgo/explorateur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/explorateur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/tpgo/graphTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/tpgo/graphTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Path.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Path.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/explorateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/explorateur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/graphTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sortie_entre_estimateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sortie_entre_estimateur.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +39,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tp_interface2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -56,21 +57,20 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.graphTest.test_exploring">
-    <configuration name="graphTest.Test_solution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="graphTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tpgo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="graphTest" />
-      <option name="METHOD_NAME" value="Test_solution" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="graphTest.cout_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="graphTest.gen_graph" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tpgo" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="graphTest" />
-      <option name="METHOD_NAME" value="cout_test" />
+      <option name="METHOD_NAME" value="gen_graph" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,19 +120,17 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.tpgo" />
-      <item itemvalue="JUnit.graphTest.cout_test" />
-      <item itemvalue="JUnit.graphTest.ls_test" />
       <item itemvalue="JUnit.graphTest.ls" />
+      <item itemvalue="JUnit.graphTest.ls_test" />
       <item itemvalue="JUnit.graphTest.test_exploring" />
-      <item itemvalue="JUnit.graphTest.Test_solution" />
+      <item itemvalue="JUnit.graphTest.gen_graph" />
+      <item itemvalue="JUnit.graphTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.graphTest.test_exploring" />
-        <item itemvalue="JUnit.graphTest.Test_solution" />
-        <item itemvalue="JUnit.graphTest.ls" />
-        <item itemvalue="JUnit.graphTest.ls_test" />
-        <item itemvalue="JUnit.graphTest.cout_test" />
+        <item itemvalue="JUnit.graphTest" />
+        <item itemvalue="JUnit.graphTest.gen_graph" />
       </list>
     </recent_temporary>
   </component>
@@ -146,7 +144,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574505274157</updated>
-      <workItem from="1574505277426" duration="28433000" />
+      <workItem from="1574505277426" duration="29022000" />
+      <workItem from="1574538026732" duration="34000" />
+      <workItem from="1574587356386" duration="4453000" />
     </task>
     <servers />
   </component>
@@ -158,7 +158,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

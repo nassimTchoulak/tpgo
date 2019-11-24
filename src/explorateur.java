@@ -17,9 +17,12 @@ public class explorateur {
         all_cas.addValue(racine); ;
 
     }
-    public void afficher(){
+    public void afficher() throws Exception{
         g.afficher();
+        g.into_file();
     }
+
+
     public Path explore() throws Exception{
             Path Z ;
             Path fils ;

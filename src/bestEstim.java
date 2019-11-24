@@ -11,7 +11,7 @@ public class bestEstim implements estimateur {
 
     public int estimation(Graph G, Path path){
 
-        System.out.print(" evaluation de : "+path);
+        //System.out.print(" evaluation de : "+path);
 
 
         // available intermediary heads
@@ -48,10 +48,10 @@ public class bestEstim implements estimateur {
         }
 
 
-        System.out.println("gives : "+total/2);
+        //System.out.println("gives : "+total/2);
 
-        //return total/2 ;
-        return 0 ;
+        return total/2 ;
+
 
     }
     public int estimation(Graph G){

@@ -108,7 +108,7 @@ public class graphTest {
 
     @Test
     public void test_exploring() throws Exception{
-        explorateur exp = new explorateur(5) ;
+        explorateur exp = new explorateur(12) ;
         System.out.println(exp.explore().toString()+s.getNb_estimation());
 
         exp.afficher();

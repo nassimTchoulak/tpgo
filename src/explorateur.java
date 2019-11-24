@@ -39,7 +39,7 @@ public class explorateur {
 
 
                 Z= all_cas.getlist().removeFirst() ;
-                //System.out.println(Z);
+                System.out.println(Z.total());
 
                 if(Z.solution()){
                     found = true ;

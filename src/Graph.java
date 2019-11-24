@@ -59,7 +59,7 @@ public class Graph {
             }
             i++;
         }
-        System.out.println(" min to go to "+to+":"+min +" excluded values "+exclude);
+       // System.out.println(" min to go to "+to+":"+min +" excluded values "+exclude);
         return min ;
 
     }
@@ -74,7 +74,7 @@ public class Graph {
             }
             i++;
         }
-        System.out.println(" min to leave from "+from+":"+min);
+        //System.out.println(" min to leave from "+from+":"+min);
         return min ;
 
     }

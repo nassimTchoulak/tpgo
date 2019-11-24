@@ -12,10 +12,17 @@ public class bestEstim implements estimateur {
 
         this.nb_estimation ++ ;
 
+        if(path.solution()){
+            return 0 ;
+        }
+
         LinkedList<Integer> ls = path.availeble_val() ;
+
+
         Iterator<Integer> iterate = ls.iterator();
 
         TreeSet<Integer> set = new TreeSet<Integer>(path.getPath());
+        set.remove(1) ;
 
         int total =  G.get_min_go_to(1,set) + G.get_min_leave_from(path.getPath().getLast(),set);
         int sommet ;
@@ -26,7 +33,8 @@ public class bestEstim implements estimateur {
             total = G.get_min_go_to(sommet) + G.get_min_leave_from(sommet) ;
 
         }
-        return total/2 ;
+        //return total/2 ;
+        return 0 ;
 
     }
     public int estimation(Graph G){
@@ -37,7 +45,7 @@ public class bestEstim implements estimateur {
             total = total + G.get_min_go_to(j) + G.get_min_leave_from(j) ;
         }
         total = total / 2 ;
-        return  total ;
+        return  0 ;
     }
     public int getNb_estimation(){
         return nb_estimation ;

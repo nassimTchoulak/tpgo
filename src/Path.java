@@ -24,7 +24,6 @@ public class Path implements Comparable<Path> {
         this.cout = 0 ;
         this.estimation = estim.estimation(g) ;
 
-        this.is_sol = false ;
 
 
     }
@@ -32,7 +31,7 @@ public class Path implements Comparable<Path> {
         if(graph==null){
             throw new  PathNotInitializedException() ;
         }
-        if(pere.getPath().indexOf(next)!=-1){
+        if(pere.getPath().indexOf(next)>0){ // retest this which wont happen ever
             throw new NotHamiltonException() ;
         }
 
@@ -48,33 +47,26 @@ public class Path implements Comparable<Path> {
 
     public LinkedList<Integer> availeble_val(){
         LinkedList<Integer> ls = new LinkedList<Integer>() ;
-        for(int i=1;i<=Path.graph.getNb_sommets();i++){
+        for(int i=2;i<=Path.graph.getNb_sommets();i++){
 
             if(!this.path.contains(i)){
                 ls.add(i);
             }
         }
+        if(ls.size()==0){
+            ls.add(1) ;
+        }
         return ls ;
     }
+
     public boolean solution(){
-        if(this.is_sol){
+        if((this.getPath().getLast()==this.getPath().getFirst())&&(this.getPath().size()>1)){
             return true ;
+
         }
-        boolean all = true ;
-        int i = 1 ;
-        while((all)&&(i<=graph.getNb_sommets())){
-            if(!this.path.contains(i)){
-                all  =false ;;
-            }
-            else{
-                i++ ;
-            }
+        else{
+            return false ;
         }
-        if(all){
-            this.cout = this.cout + graph.get_arret(path.getLast(),1) ;
-            this.is_sol = true ;
-        }
-        return all ;
     }
 
 
@@ -124,16 +116,20 @@ public class Path implements Comparable<Path> {
     }
 
     public String toString(){
-        if(this.solution())
+        if(this.solution()) // if(this.solution())
         return this.path.toString() +" | cost: "+this.cout+" | ";
         else{
-            return this.path.toString() +" | cost: "+this.cout+" | estim: "+this.estimation;
+            return this.path.toString() +" | cost: "+this.cout+" | estim: "+this.estimation +" total@@"+this.total();
         }
     }
 
 
     public int hashCode(){
         return Objects.hash(this.cout,this.path.hashCode());
+    }
+
+    public int real_cout(){
+        return this.cout + graph.get_arret(path.getLast(),1) ;
     }
 
 }

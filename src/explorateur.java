@@ -15,6 +15,7 @@ public class explorateur {
         this.g = new Graph(nb) ;
         this.S = new bestEstim() ;
         racine = new Path(this.S,this.g) ;
+        racine.setEstimation();
         all_cas.addValue(racine); ;
 
     }
@@ -35,6 +36,8 @@ public class explorateur {
             while((!this.all_cas.getlist().isEmpty())&&(!found)){
 
                // System.out.println(all_cas);
+
+
                 Z= all_cas.getlist().removeFirst() ;
                 //System.out.println(Z);
 
@@ -48,6 +51,7 @@ public class explorateur {
                     for(i=0;i<aval.size();i++){
 
                         fils = new Path(Z,aval.get(i)) ;
+
                         fils.setEstimation();
 
 
@@ -58,7 +62,7 @@ public class explorateur {
 
                             Path tmp = all_cas.getlist().remove(index) ;
 
-                           // System.out.println("confilct manegement on :"+fils +" with "+tmp);
+                            //System.out.println("confilct manegement on :"+fils +" with "+tmp);
 
                             if(tmp.compareTo(fils)>0){
                                 all_cas.addValue(fils);
